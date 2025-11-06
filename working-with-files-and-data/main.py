@@ -1,5 +1,7 @@
-with open("./sample.txt", "r") as f:
-    content = f.read().splitlines()
+with open("./sample.txt", "r") as file:
+    content = file.read().split()
 
-    my_string = "\n".join(content)
-    print(my_string)
+
+with open("./_sample.txt", "w") as f:
+    for c in content:
+        f.write(f"{c}\n")
