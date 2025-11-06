@@ -1,27 +1,22 @@
-# Reading file into list
-
-# example 1
-my_list = []
-
-with open("./config.txt", "rt") as file:
-    content = file.read().splitlines()
-    for c in content:
-        my_list.append(c)
+# Writing to a text file
+with open("./config.txt", "wt") as file:
+    file.write("Just a line.\n")
+    file.write("Just a second line")
 
 
-# example 2
+with open("./config.txt", "wt") as file:
+    file.write("Just a line.\nJust a second line")
 
-with open("./config.txt", "rt") as file:
-    content = file.readlines()
-    content[0] = "PORT=7777"
-    print(content[0])
+with open("./config1.txt", "at") as file:
+    file.write("This is a new line.\n")
+    file.write("This is a new line.\n")
 
-# example 3
-with open("./config.txt", "rt") as file:
-    content = list(file)
-    print(content)
 
-# Iterate over a file
-with open("./config.txt", "rt") as file:
-    for f in file:
-        print(f, end=" ")
+with open("./config.txt", "r+") as file:
+    file.write("Line as the beginning\n")
+
+with open("./config.txt", "r+") as file:
+    file.seek(10)
+    file.write("Line as the beginning\n")
+    file.seek(15)
+    print(file.read())
