@@ -1,8 +1,5 @@
-with open("./mac-address.txt", "rt") as f:
-    content = f.read().split()
-    unique_mac = set(list(content))
+with open("./sample.txt", "r") as f:
+    content = f.read().splitlines()
 
-
-with open("./u_mac-address.txt", "a+") as f:
-    for u in unique_mac:
-        f.write(f"{u}\n")
+    my_string = "\n".join(content)
+    print(my_string)
