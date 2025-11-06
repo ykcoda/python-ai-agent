@@ -1,7 +1,9 @@
-with open("./sample.txt", "r") as file:
-    content = file.read().split()
+def tail(filename, n=0):
+    with open(filename, "rt") as file:
+        content = file.readlines()
+
+        for c in content[-n:]:
+            print(c)
 
 
-with open("./_sample.txt", "w") as f:
-    for c in content:
-        f.write(f"{c}\n")
+content = tail("./sample.txt", 1)
