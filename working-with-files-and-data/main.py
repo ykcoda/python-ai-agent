@@ -1,13 +1,10 @@
-with open("./sample1.txt") as f:
-    content1 = set(f.read().split())
-    print(content1)
+with open("./sample1.txt") as file:
+    content = file.read().split()
+    print(content)
 
+    my_dict = {}
 
-with open("./sample2.txt") as f1:
-    content2 = set(f1.read().split())
-    print(content2)
+    for c in content:
+        my_dict[c] = len(c)
 
-unique1 = content1.difference(content2)
-print(unique1)
-unique2 = content2.difference(content1)
-print(unique2)
+    print(my_dict)
