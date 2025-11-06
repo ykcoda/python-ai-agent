@@ -1,10 +1,13 @@
-with open("./sample.txt", "rt") as f:
-    total = 0
-    content = f.read().split()
-    for c in content:
-        data = c.split(":")
-        if data[0].lower() == "d":
-            total += int(data[1])
-        else:
-            total -= int(data[1])
-    print(f"Total: {total}")
+with open("./sample1.txt") as f:
+    content1 = set(f.read().split())
+    print(content1)
+
+
+with open("./sample2.txt") as f1:
+    content2 = set(f1.read().split())
+    print(content2)
+
+unique1 = content1.difference(content2)
+print(unique1)
+unique2 = content2.difference(content1)
+print(unique2)
