@@ -1,10 +1,8 @@
-with open("./devices.txt", "rt") as file:
-    content = file.read().splitlines()
-    device_list = list()
-    for c in content[1:]:
-        device_list.append(c.split(":"))
+with open("./mac-address.txt", "rt") as f:
+    content = f.read().split()
+    unique_mac = set(list(content))
 
-    print(device_list)
-    print("#" * 80)
-    for device in device_list:
-        print(f"pinging.... {device[1]}")
+
+with open("./u_mac-address.txt", "a+") as f:
+    for u in unique_mac:
+        f.write(f"{u}\n")
