@@ -1,10 +1,13 @@
-with open("./devices.txt", "rt") as file:
-    content = file.read().splitlines()
-    device_list = list()
-    for c in content[1:]:
-        device_list.append(c.split(":"))
+import json
+from pprint import pprint
 
-    print(device_list)
-    print("#" * 80)
-    for device in device_list:
-        print(f"pinging.... {device[1]}")
+with open("./sample.json", "r") as f:
+    config = json.load(f)
+
+print(config)
+
+pretty_json = json.dumps(config, indent=4)
+print(pretty_json)
+
+
+print(config["model"])
