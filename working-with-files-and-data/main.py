@@ -1,14 +1,12 @@
-with open("./sample1.txt") as file:
-    content = file.read().split()
+# READING CSV FILES IN PYTHON
 
-    my_dict = {}
+import csv
 
-    for c in content:
-        my_dict[c] = len(c)
+with open("./model_logs.csv", "r") as csv_f:
+    reader = csv.reader(csv_f)
+    next(reader)
 
-    # s_my_dict = sorted(my_dict.items(), key=lambda x: x[1], reverse=True)
+    token_data = {row[0]: int(row[3]) for row in reader}
+    peak_day = max(token_data, key=token_data.get)
 
-    nn = sorted(my_dict.items())
-    ss = sorted(my_dict.items(), key=lambda x: x[1], reverse=True)
-
-    print(ss[:100])
+    print(peak_day)
