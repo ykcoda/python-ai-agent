@@ -125,12 +125,12 @@
         "documentation": {}
     },
     {
-        "label": "main",
-        "kind": 2,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "def main():\n    print(\"Hello from python-ai-agent!\")\nif __name__ == \"__main__\":\n    main()",
-        "detail": "main",
+        "label": "f",
+        "kind": 5,
+        "importPath": "working-with-files-and-data.main",
+        "description": "working-with-files-and-data.main",
+        "peekOfCode": "f = open(\"./config.txt\")\nprint(f.read())\n# do stuff\nprint(\"#\" * 20)\nf.seek(0)\nprint(f.read())",
+        "detail": "working-with-files-and-data.main",
         "documentation": {}
     }
 ]
