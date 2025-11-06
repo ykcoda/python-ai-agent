@@ -1,3 +1,4 @@
-Hello! This is a sample text file.
-You can use it for testing file reading in Python.
-Have a great day!
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/mydb
+JWT_SECRET=supersecret123
+REDIS_URL=redis://localhost:6379

@@ -123,5 +123,14 @@
         "peekOfCode": "sys.prefix = base",
         "detail": ".venv.bin.activate_this",
         "documentation": {}
+    },
+    {
+        "label": "my_list",
+        "kind": 5,
+        "importPath": "working-with-files-and-data.main",
+        "description": "working-with-files-and-data.main",
+        "peekOfCode": "my_list = []\nwith open(\"./config.txt\", \"rt\") as file:\n    content = file.read().splitlines()\n    for c in content:\n        my_list.append(c)\n# example 2\nwith open(\"./config.txt\", \"rt\") as file:\n    content = file.readlines()\n    content[0] = \"PORT=7777\"\n    print(content[0])",
+        "detail": "working-with-files-and-data.main",
+        "documentation": {}
     }
 ]
