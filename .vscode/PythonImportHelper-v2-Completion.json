@@ -44,6 +44,40 @@
         "documentation": {}
     },
     {
+        "label": "OpenAI",
+        "importPath": "openai",
+        "description": "openai",
+        "isExtraImport": true,
+        "detail": "openai",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
         "label": "bin_dir",
         "kind": 5,
         "importPath": ".venv.bin.activate_this",
@@ -125,29 +159,56 @@
         "documentation": {}
     },
     {
-        "label": "Robot",
+        "label": "ChatBot",
         "kind": 6,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "class Robot:\n    \"\"\"This class implements a Robot\"\"\"\n    population = 0  # a class attribute\n    def __init__(self, name: str, price: int):\n        self.name = name\n        self.price = price\n        Robot.population += 1\n    def setEnegy(self, energy):\n        self.energy = energy\n    def __str__(self):",
+        "peekOfCode": "class ChatBot:\n    # initialize with api_key, model and temperature\n    def __init__(self, api_key, model=\"gpt-4o\", temperature=0.5):\n        self.api_key = api_key\n        self.model = model\n        self.temperature = temperature\n        self.response_file = \"./chat-bot/responses.txt\"\n        self.json_file = \"./chat-bot/responses.json\"\n    # make call to openai api\n    def ask(self, user_message):",
         "detail": "main",
         "documentation": {}
     },
     {
-        "label": "r1",
+        "label": "api_key",
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "r1 = Robot(\"r1\", 34)\nr2 = Robot(\"r2\", 250)\nprint(r1 + r2)",
+        "peekOfCode": "api_key = os.getenv(\"API_KEY\")\n#############################################\nlogging.basicConfig(\n    format=\"%(asctime)s %(levelname)-8s %(message)s\",\n    datefmt=\"%Y-%m-%d %H:%M:%S\",\n    filename=\"./chat-bot/logs.txt\",\n    level=logging.INFO,\n)\n#############################################\n# Class Blueprint:",
         "detail": "main",
         "documentation": {}
     },
     {
-        "label": "r2",
+        "label": "bot",
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "r2 = Robot(\"r2\", 250)\nprint(r1 + r2)",
+        "peekOfCode": "bot = ChatBot(api_key=api_key, temperature=0.7)\n# question to send to api\nquestion = input(\"Ask anything: \")\nresponse = bot.ask(question)\n# save response to a file\nbot.save_response_to_file(response)\n# retrieve conversation history\nconvo_history = bot.load_convertion_history()\nbot.export_to_json(question, response)\n# 1 ** Save responses to a File ---- DONE",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "question",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "question = input(\"Ask anything: \")\nresponse = bot.ask(question)\n# save response to a file\nbot.save_response_to_file(response)\n# retrieve conversation history\nconvo_history = bot.load_convertion_history()\nbot.export_to_json(question, response)\n# 1 ** Save responses to a File ---- DONE\n# 2 ** Load conversation History ---- DONE\n# 3 ** Log errors to a file --- DONE",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "response = bot.ask(question)\n# save response to a file\nbot.save_response_to_file(response)\n# retrieve conversation history\nconvo_history = bot.load_convertion_history()\nbot.export_to_json(question, response)\n# 1 ** Save responses to a File ---- DONE\n# 2 ** Load conversation History ---- DONE\n# 3 ** Log errors to a file --- DONE\n# 4 ** Enable contextual conversation",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "convo_history",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "convo_history = bot.load_convertion_history()\nbot.export_to_json(question, response)\n# 1 ** Save responses to a File ---- DONE\n# 2 ** Load conversation History ---- DONE\n# 3 ** Log errors to a file --- DONE\n# 4 ** Enable contextual conversation\n# 5 ** Export responses to json --- DONE\n# 6 ** Integrate with external API (eg weather etc..)",
         "detail": "main",
         "documentation": {}
     }

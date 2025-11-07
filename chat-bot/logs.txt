@@ -1,0 +1,77 @@
+2025-11-07 08:07:27 INFO     HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-07 08:07:27 INFO     What should one learn to become an AI engineer
+2025-11-07 08:07:27 INFO     Response written to: ./chat-bot/responses.txt
+2025-11-07 08:08:55 INFO     HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-07 08:08:55 INFO     What should one learn to become an AI engineer
+2025-11-07 08:08:55 INFO     Response written to: ./chat-bot/responses.txt
+2025-11-07 08:10:57 INFO     HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-07 08:10:57 INFO     What should one learn to become an AI engineer
+2025-11-07 08:10:57 INFO     Response written to: ./chat-bot/responses.txt
+2025-11-07 08:12:21 INFO     HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-07 08:12:21 INFO     What should one learn to become an AI engineer
+2025-11-07 08:12:21 INFO     Response written to: ./chat-bot/responses.txt
+2025-11-07 08:13:45 INFO     HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-07 08:13:45 INFO     What should one learn to become an AI engineer
+2025-11-07 08:13:45 INFO     Response written to: ./chat-bot/responses.txt
+2025-11-07 08:16:19 INFO     HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-07 08:16:19 INFO     How can i be come a python programmer
+2025-11-07 08:16:19 INFO     Response written to: ./chat-bot/responses.txt
+2025-11-07 08:24:50 INFO     HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-07 08:24:50 INFO     how should i prepare to meet up the demand of AI
+2025-11-07 08:24:50 INFO     Response written to: ./chat-bot/responses.txt
+2025-11-07 08:24:50 INFO     Conversation history retrieved....
+2025-11-07 08:28:11 INFO     HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-07 08:28:11 INFO     what is api
+2025-11-07 08:28:11 INFO     Response written to: ./chat-bot/responses.txt
+2025-11-07 08:28:11 INFO     Conversation history retrieved....
+2025-11-07 08:28:41 INFO     Conversation history retrieved....
+2025-11-07 08:39:20 INFO     HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-07 08:39:20 INFO     what is fastapi
+2025-11-07 08:39:20 INFO     Response written to: ./chat-bot/responses.txt
+2025-11-07 08:39:20 INFO     Conversation history retrieved....
+2025-11-07 08:39:20 ERROR    [Errno 2] No such file or directory: './chat-bot/responses.json'
+2025-11-07 08:40:49 INFO     HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-07 08:40:49 INFO     what is oauth2
+2025-11-07 08:40:49 INFO     Response written to: ./chat-bot/responses.txt
+2025-11-07 08:40:49 INFO     Conversation history retrieved....
+2025-11-07 08:40:49 ERROR    dumps() takes 1 positional argument but 2 positional arguments (and 1 keyword-only argument) were given
+2025-11-07 08:42:03 INFO     HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-07 08:42:03 INFO     what is pydantic model
+2025-11-07 08:42:03 INFO     Response written to: ./chat-bot/responses.txt
+2025-11-07 08:42:03 INFO     Conversation history retrieved....
+2025-11-07 08:42:03 INFO     Response exported as json
+2025-11-07 08:46:13 INFO     HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-07 08:46:13 INFO     what is api key
+2025-11-07 08:46:13 INFO     Response written to: ./chat-bot/responses.txt
+2025-11-07 08:46:13 INFO     Conversation history retrieved....
+2025-11-07 08:46:13 ERROR    cannot access local variable 'data' where it is not associated with a value
+2025-11-07 08:49:25 INFO     HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-07 08:49:25 INFO     what is a python object and class
+2025-11-07 08:49:25 INFO     Response written to: ./chat-bot/responses.txt
+2025-11-07 08:49:25 INFO     Conversation history retrieved....
+2025-11-07 08:49:25 ERROR    'dict' object has no attribute 'append'
+2025-11-07 08:50:55 INFO     HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-07 08:50:55 INFO     what is gen ai
+2025-11-07 08:50:55 INFO     Response written to: ./chat-bot/responses.txt
+2025-11-07 08:50:55 INFO     Conversation history retrieved....
+2025-11-07 08:50:55 INFO     Response exported as json
+2025-11-07 08:51:36 INFO     HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-07 08:51:36 INFO     what is fastapi used for ?
+2025-11-07 08:51:36 INFO     Response written to: ./chat-bot/responses.txt
+2025-11-07 08:51:36 INFO     Conversation history retrieved....
+2025-11-07 08:51:36 INFO     Response exported as json
+2025-11-07 08:53:20 INFO     HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-07 08:53:20 INFO     what is fastapi
+2025-11-07 08:53:20 INFO     Response written to: ./chat-bot/responses.txt
+2025-11-07 08:53:20 INFO     Conversation history retrieved....
+2025-11-07 08:53:20 ERROR    Expecting value: line 1 column 1 (char 0)
+2025-11-07 08:54:08 INFO     HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-07 08:54:08 INFO     how can i become a fastapi developer and is it wise to learn fastapi now with alot of ai systems out there
+2025-11-07 08:54:08 INFO     Response written to: ./chat-bot/responses.txt
+2025-11-07 08:54:08 INFO     Conversation history retrieved....
+2025-11-07 08:54:08 ERROR    Expecting value: line 1 column 1 (char 0)
+2025-11-07 08:57:12 INFO     HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-07 08:57:12 INFO     what is fastapi 
+2025-11-07 08:57:12 INFO     Response written to: ./chat-bot/responses.txt
+2025-11-07 08:57:12 INFO     Conversation history retrieved....
+2025-11-07 08:57:12 INFO     Response exported as json
