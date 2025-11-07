@@ -51,7 +51,7 @@ class HttpService:
             return None
 
     async def post_request(self):
-
+        """Post an asynchronous http request"""
         async with httpx.AsyncClient() as client:
             try:
                 response = await client.post(
