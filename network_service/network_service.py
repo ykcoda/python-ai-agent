@@ -27,6 +27,7 @@ class NetworkService:
         except Exception as e:
             logging.error(f"{e}")
 
+    @property
     def check_device_availability(self):
         """checks availability of the ip address in the list"""
         ip_addresses = self.get_devices()
@@ -50,3 +51,8 @@ class NetworkService:
                 logging.error(f"{e}")
 
         return output.decode()
+
+
+if __name__ == "__main__":
+    nc = NetworkService("./devices.txt")
+    nc.check_device_availability

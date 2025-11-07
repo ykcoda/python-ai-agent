@@ -1,0 +1,18 @@
+2025-11-07 11:26:43,607 - INFO - Devices: ['8.8.8.8', '1.1.1.1', 'e.2.1.2', '4.2.2.2', '1.0.0.1', '208.67.222.222', '4.2.2.2']
+2025-11-07 11:26:47,641 - INFO - Command executed: [ping -c 5 8.8.8.8] [8.8.8.8 is reachable]
+2025-11-07 11:26:51,675 - INFO - Command executed: [ping -c 5 1.1.1.1] [1.1.1.1 is reachable]
+2025-11-07 11:26:51,690 - ERROR - Command '['ping', '-c', '5', 'e.2.1.2']' returned non-zero exit status 68.
+2025-11-07 11:26:55,733 - INFO - Command executed: [ping -c 5 4.2.2.2] [4.2.2.2 is reachable]
+2025-11-07 11:26:59,783 - INFO - Command executed: [ping -c 5 1.0.0.1] [1.0.0.1 is reachable]
+2025-11-07 11:27:03,823 - INFO - Command executed: [ping -c 5 208.67.222.222] [208.67.222.222 is reachable]
+2025-11-07 11:27:07,875 - INFO - Command executed: [ping -c 5 4.2.2.2] [4.2.2.2 is reachable]
+2025-11-07 12:26:56,750 - INFO - Devices: ['8.8.8.8', '1.1.1.1', 'e.2.1.2', '4.2.2.2', '1.0.0.1', '208.67.222.222', '4.2.2.2']
+2025-11-07 12:27:00,787 - INFO - Command executed: [ping -c 5 8.8.8.8] [8.8.8.8 is reachable]
+2025-11-07 12:27:04,832 - INFO - Command executed: [ping -c 5 1.1.1.1] [1.1.1.1 is reachable]
+2025-11-07 12:27:04,847 - ERROR - Command '['ping', '-c', '5', 'e.2.1.2']' returned non-zero exit status 68.
+2025-11-07 12:27:08,895 - INFO - Command executed: [ping -c 5 4.2.2.2] [4.2.2.2 is reachable]
+2025-11-07 12:27:12,942 - INFO - Command executed: [ping -c 5 1.0.0.1] [1.0.0.1 is reachable]
+2025-11-07 12:27:16,989 - INFO - Command executed: [ping -c 5 208.67.222.222] [208.67.222.222 is reachable]
+2025-11-07 12:27:21,036 - INFO - Command executed: [ping -c 5 4.2.2.2] [4.2.2.2 is reachable]
+2025-11-07 12:27:46,671 - ERROR - [Errno 2] No such file or directory: './devices.txt'
+2025-11-07 12:27:46,671 - WARNING - File contains no IP Address!!!
