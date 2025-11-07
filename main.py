@@ -1,4 +1,4 @@
-# OOP DEFINING CLASSES AND OBJECTS
+# MAGIC OBJECTS
 
 
 class Robot:
@@ -6,26 +6,23 @@ class Robot:
 
     population = 0  # a class attribute
 
-    def __init__(self, name: str, year: int):
+    def __init__(self, name: str, price: int):
         self.name = name
-        self.year = year
+        self.price = price
         Robot.population += 1
 
     def setEnegy(self, energy):
         self.energy = energy
 
+    def __str__(self):
+        my_str = f"My name is {self.name} and i am priced ${self.price}"
+        return my_str
 
-r1 = Robot("Robot1", 2025)
-r2 = Robot("Robot2", 2050)
-print(f"Robot name: {r1.name}")
-r1.setEnegy(500)
-print(r1.energy)
-
-print(getattr(r1, "energy"))
-print(r1.__dict__)
-
-# print(r1.brand)
-print(getattr(r1, "brand", "N/A"))
+    def __add__(self, other):
+        return self.price + other.price
 
 
-print(f"Robots alive: {Robot.population}")
+r1 = Robot("r1", 34)
+r2 = Robot("r2", 250)
+
+print(r1 + r2)

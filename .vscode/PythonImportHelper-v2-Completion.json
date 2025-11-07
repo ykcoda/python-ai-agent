@@ -129,7 +129,7 @@
         "kind": 6,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "class Robot:\n    \"\"\"This class implements a Robot\"\"\"\n    population = 0  # a class attribute\n    def __init__(self, name: str, year: int):\n        self.name = name\n        self.year = year\n        Robot.population += 1\n    def setEnegy(self, energy):\n        self.energy = energy\nr1 = Robot(\"Robot1\", 2025)",
+        "peekOfCode": "class Robot:\n    \"\"\"This class implements a Robot\"\"\"\n    population = 0  # a class attribute\n    def __init__(self, name: str, price: int):\n        self.name = name\n        self.price = price\n        Robot.population += 1\n    def setEnegy(self, energy):\n        self.energy = energy\n    def __str__(self):",
         "detail": "main",
         "documentation": {}
     },
@@ -138,7 +138,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "r1 = Robot(\"Robot1\", 2025)\nr2 = Robot(\"Robot2\", 2050)\nprint(f\"Robot name: {r1.name}\")\nr1.setEnegy(500)\nprint(r1.energy)\nprint(getattr(r1, \"energy\"))\nprint(r1.__dict__)\n# print(r1.brand)\nprint(getattr(r1, \"brand\", \"N/A\"))\nprint(f\"Robots alive: {Robot.population}\")",
+        "peekOfCode": "r1 = Robot(\"r1\", 34)\nr2 = Robot(\"r2\", 250)\nprint(r1 + r2)",
         "detail": "main",
         "documentation": {}
     },
@@ -147,7 +147,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "r2 = Robot(\"Robot2\", 2050)\nprint(f\"Robot name: {r1.name}\")\nr1.setEnegy(500)\nprint(r1.energy)\nprint(getattr(r1, \"energy\"))\nprint(r1.__dict__)\n# print(r1.brand)\nprint(getattr(r1, \"brand\", \"N/A\"))\nprint(f\"Robots alive: {Robot.population}\")",
+        "peekOfCode": "r2 = Robot(\"r2\", 250)\nprint(r1 + r2)",
         "detail": "main",
         "documentation": {}
     }
