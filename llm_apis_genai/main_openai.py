@@ -10,16 +10,22 @@ question = input("Ask any question: ")
 
 client = OpenAI()
 
-response = client.chat.completions.create(
+stream = client.chat.completions.create(
     model="gpt-4o-mini",
     messages=[
         {"role": "developer", "content": "You a python teacher and programmer"},
         {"role": "user", "content": question},
     ],
-    temperature=0.7,
+    stream=True,  # this enables streaming
 )
 
-print(response.choices[0].message.content)
+# to get streams out
+for chunk in stream:
+    if chunk.choices[0].delta.content is not None:
+        print(chunk.choices[0].delta.content, end="")
+
+
+# print(response.choices[0].message.content)
 
 
 # for model in client.models.list():
