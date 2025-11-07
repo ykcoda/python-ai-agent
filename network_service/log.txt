@@ -1,0 +1,8 @@
+2025-11-07 11:14:08,591 - INFO - Devices: ['8.8.8.8', '1.1.1.1', 'e.2.1.2', '4.2.2.2', '1.0.0.1', '208.67.222.222', '4.2.2.2']
+2025-11-07 11:14:12,625 - INFO - Command executed: [ping -c 5 8.8.8.8] [8.8.8.8 is reachable]
+2025-11-07 11:14:16,668 - INFO - Command executed: [ping -c 5 1.1.1.1] [1.1.1.1 is reachable]
+2025-11-07 11:14:16,682 - ERROR - Command '['ping', '-c', '5', 'e.2.1.2']' returned non-zero exit status 68.
+2025-11-07 11:14:20,727 - INFO - Command executed: [ping -c 5 4.2.2.2] [4.2.2.2 is reachable]
+2025-11-07 11:14:24,765 - INFO - Command executed: [ping -c 5 1.0.0.1] [1.0.0.1 is reachable]
+2025-11-07 11:14:28,819 - INFO - Command executed: [ping -c 5 208.67.222.222] [208.67.222.222 is reachable]
+2025-11-07 11:14:32,873 - INFO - Command executed: [ping -c 5 4.2.2.2] [4.2.2.2 is reachable]

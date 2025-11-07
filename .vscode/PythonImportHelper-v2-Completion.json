@@ -44,11 +44,21 @@
         "documentation": {}
     },
     {
-        "label": "TypedDict",
-        "importPath": "typing",
-        "description": "typing",
+        "label": "logging",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "typing",
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
         "documentation": {}
     },
     {
@@ -133,48 +143,12 @@
         "documentation": {}
     },
     {
-        "label": "Movie",
+        "label": "NetworkService",
         "kind": 6,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "class Movie(TypedDict):\n    title: str\n    year: int\n    rating: float\nmy_movie: Movie = {\"title\": \"Inception\", \"year\": 2025, \"rating\": 8.8}\ndef process_movie(mov: Movie) -> None:\n    print(f\"Title: {mov['title']}\")\n    print(f\"Year: {mov['year']}\")\n    print(f\"Rating: {mov['rating']}\")\nprocess_movie(my_movie)",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "Employee",
-        "kind": 6,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "class Employee(TypedDict, total=False):\n    name: str\n    age: int\n    department: str\nmy_employee: Employee = {\"name\": \"John\"}\nmy_employee.get(\"age\", \"N/A\")\nclass Address(TypedDict):\n    street: str\n    city: str\n    zip: str",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "Address",
-        "kind": 6,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "class Address(TypedDict):\n    street: str\n    city: str\n    zip: str\nclass User(TypedDict):\n    username: str\n    email: str\n    address: Address\nuser1: User = {\n    \"username\": \"Kwame\",",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "kind": 6,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "class User(TypedDict):\n    username: str\n    email: str\n    address: Address\nuser1: User = {\n    \"username\": \"Kwame\",\n    \"email\": \"kwame@gmail.com\",\n    \"address\": {\"street\": \"The Greens\", \"city\": \"Sunderland\", \"zip\": \"SR5 2HT\"},\n}\nprint(user1[\"address\"])",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "process_movie",
-        "kind": 2,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "def process_movie(mov: Movie) -> None:\n    print(f\"Title: {mov['title']}\")\n    print(f\"Year: {mov['year']}\")\n    print(f\"Rating: {mov['rating']}\")\nprocess_movie(my_movie)\nclass Employee(TypedDict, total=False):\n    name: str\n    age: int\n    department: str\nmy_employee: Employee = {\"name\": \"John\"}",
-        "detail": "main",
+        "importPath": "network_service.network_service",
+        "description": "network_service.network_service",
+        "peekOfCode": "class NetworkService:\n    \"\"\"NetworkService accepts a file(.txt) with ip addresses and check availability of each IP Address\"\"\"\n    def __init__(self, file: str):\n        \"\"\"Pass path contianing list of ip address\"\"\"\n        self.file = file\n    def get_devices(self):\n        \"\"\"Generates a list of ip addresses from the loaded .txt file\"\"\"\n        try:\n            with open(self.file) as file:\n                ip_addresses = file.read().splitlines()",
+        "detail": "network_service.network_service",
         "documentation": {}
     }
 ]
