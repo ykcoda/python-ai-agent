@@ -44,37 +44,11 @@
         "documentation": {}
     },
     {
-        "label": "OpenAI",
-        "importPath": "openai",
-        "description": "openai",
+        "label": "TypedDict",
+        "importPath": "typing",
+        "description": "typing",
         "isExtraImport": true,
-        "detail": "openai",
-        "documentation": {}
-    },
-    {
-        "label": "load_dotenv",
-        "importPath": "dotenv",
-        "description": "dotenv",
-        "isExtraImport": true,
-        "detail": "dotenv",
-        "documentation": {}
-    },
-    {
-        "label": "logging",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "logging",
-        "description": "logging",
-        "detail": "logging",
-        "documentation": {}
-    },
-    {
-        "label": "json",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "json",
-        "description": "json",
-        "detail": "json",
+        "detail": "typing",
         "documentation": {}
     },
     {
@@ -159,56 +133,47 @@
         "documentation": {}
     },
     {
-        "label": "ChatBot",
+        "label": "Movie",
         "kind": 6,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "class ChatBot:\n    # initialize with api_key, model and temperature\n    def __init__(self, api_key, model=\"gpt-4o\", temperature=0.5):\n        self.api_key = api_key\n        self.model = model\n        self.temperature = temperature\n        self.response_file = \"./chat-bot/responses.txt\"\n        self.json_file = \"./chat-bot/responses.json\"\n    # make call to openai api\n    def ask(self, user_message):",
+        "peekOfCode": "class Movie(TypedDict):\n    title: str\n    year: int\n    rating: float\nmy_movie: Movie = {\"title\": \"Inception\", \"year\": 2025, \"rating\": 8.8}\ndef process_movie(mov: Movie) -> None:\n    print(f\"Title: {mov['title']}\")\n    print(f\"Year: {mov['year']}\")\n    print(f\"Rating: {mov['rating']}\")\nprocess_movie(my_movie)",
         "detail": "main",
         "documentation": {}
     },
     {
-        "label": "api_key",
-        "kind": 5,
+        "label": "Employee",
+        "kind": 6,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "api_key = os.getenv(\"API_KEY\")\n#############################################\nlogging.basicConfig(\n    format=\"%(asctime)s %(levelname)-8s %(message)s\",\n    datefmt=\"%Y-%m-%d %H:%M:%S\",\n    filename=\"./chat-bot/logs.txt\",\n    level=logging.INFO,\n)\n#############################################\n# Class Blueprint:",
+        "peekOfCode": "class Employee(TypedDict, total=False):\n    name: str\n    age: int\n    department: str\nmy_employee: Employee = {\"name\": \"John\"}\nmy_employee.get(\"age\", \"N/A\")\nclass Address(TypedDict):\n    street: str\n    city: str\n    zip: str",
         "detail": "main",
         "documentation": {}
     },
     {
-        "label": "bot",
-        "kind": 5,
+        "label": "Address",
+        "kind": 6,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "bot = ChatBot(api_key=api_key, temperature=0.7)\n# question to send to api\nquestion = input(\"Ask anything: \")\nresponse = bot.ask(question)\n# save response to a file\nbot.save_response_to_file(response)\n# retrieve conversation history\nconvo_history = bot.load_convertion_history()\nbot.export_to_json(question, response)\n# 1 ** Save responses to a File ---- DONE",
+        "peekOfCode": "class Address(TypedDict):\n    street: str\n    city: str\n    zip: str\nclass User(TypedDict):\n    username: str\n    email: str\n    address: Address\nuser1: User = {\n    \"username\": \"Kwame\",",
         "detail": "main",
         "documentation": {}
     },
     {
-        "label": "question",
-        "kind": 5,
+        "label": "User",
+        "kind": 6,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "question = input(\"Ask anything: \")\nresponse = bot.ask(question)\n# save response to a file\nbot.save_response_to_file(response)\n# retrieve conversation history\nconvo_history = bot.load_convertion_history()\nbot.export_to_json(question, response)\n# 1 ** Save responses to a File ---- DONE\n# 2 ** Load conversation History ---- DONE\n# 3 ** Log errors to a file --- DONE",
+        "peekOfCode": "class User(TypedDict):\n    username: str\n    email: str\n    address: Address\nuser1: User = {\n    \"username\": \"Kwame\",\n    \"email\": \"kwame@gmail.com\",\n    \"address\": {\"street\": \"The Greens\", \"city\": \"Sunderland\", \"zip\": \"SR5 2HT\"},\n}\nprint(user1[\"address\"])",
         "detail": "main",
         "documentation": {}
     },
     {
-        "label": "response",
-        "kind": 5,
+        "label": "process_movie",
+        "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "response = bot.ask(question)\n# save response to a file\nbot.save_response_to_file(response)\n# retrieve conversation history\nconvo_history = bot.load_convertion_history()\nbot.export_to_json(question, response)\n# 1 ** Save responses to a File ---- DONE\n# 2 ** Load conversation History ---- DONE\n# 3 ** Log errors to a file --- DONE\n# 4 ** Enable contextual conversation",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "convo_history",
-        "kind": 5,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "convo_history = bot.load_convertion_history()\nbot.export_to_json(question, response)\n# 1 ** Save responses to a File ---- DONE\n# 2 ** Load conversation History ---- DONE\n# 3 ** Log errors to a file --- DONE\n# 4 ** Enable contextual conversation\n# 5 ** Export responses to json --- DONE\n# 6 ** Integrate with external API (eg weather etc..)",
+        "peekOfCode": "def process_movie(mov: Movie) -> None:\n    print(f\"Title: {mov['title']}\")\n    print(f\"Year: {mov['year']}\")\n    print(f\"Rating: {mov['rating']}\")\nprocess_movie(my_movie)\nclass Employee(TypedDict, total=False):\n    name: str\n    age: int\n    department: str\nmy_employee: Employee = {\"name\": \"John\"}",
         "detail": "main",
         "documentation": {}
     }
