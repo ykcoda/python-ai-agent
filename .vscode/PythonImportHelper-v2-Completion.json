@@ -80,19 +80,11 @@
         "documentation": {}
     },
     {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
         "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
+        "detail": "dotenv",
         "documentation": {}
     },
     {
@@ -198,7 +190,16 @@
         "kind": 6,
         "importPath": "httpxx.main",
         "description": "httpxx.main",
-        "peekOfCode": "class HttpService:\n    \"\"\"HttpService will accept a URL and make an API call.\"\"\"\n    def __init__(self, url, timeout=5):\n        \"\"\"Accepts url and timeout\"\"\"\n        self.url = url\n        self.timeout = timeout\n    @property\n    async def make_http_request(self):\n        \"\"\"Make an asynchronous http request and returns a json\"\"\"\n        async with httpx.AsyncClient() as client:",
+        "peekOfCode": "class HttpService:\n    \"\"\"HttpService will accept a URL and make an API call.\"\"\"\n    def __init__(\n        self,\n        url: str,\n        headers: dict | None = None,\n        data: dict | None = None,\n        timeout: int = 5,\n    ):\n        \"\"\"Accepts url and timeout\"\"\"",
+        "detail": "httpxx.main",
+        "documentation": {}
+    },
+    {
+        "label": "api_key",
+        "kind": 5,
+        "importPath": "httpxx.main",
+        "description": "httpxx.main",
+        "peekOfCode": "api_key = os.getenv(\"API_KEY\")\n######################################################################################################\nlogging.basicConfig(\n    filename=\"logs.txt\",\n    level=logging.INFO,\n    format=\"%(asctime)s - %(levelname)s - %(message)s\",\n)\n######################################################################################################\nclass HttpService:\n    \"\"\"HttpService will accept a URL and make an API call.\"\"\"",
         "detail": "httpxx.main",
         "documentation": {}
     },
@@ -216,7 +217,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "url = \"https://api.open-meteo.com/v1/forecast?latitude=35&longitude=139&hourly=temperature_2m\"\nclient = HttpService(url=url, timeout=2)\ndata = asyncio.run(client.make_http_request)\nif data:\n    json_data = json.loads(data)\n    print(json_data[\"hourly\"])",
+        "peekOfCode": "url = \"https://api.open-meteo.com/v1/forecast?latitude=35&longitude=139&hourly=temperature_2m\"\nclient = HttpService(url=url, timeout=2)\ndata = asyncio.run(client.get_request())\nif data:\n    json_data = json.loads(data)\n    print(json_data[\"hourly\"])",
         "detail": "main",
         "documentation": {}
     },
@@ -225,7 +226,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "client = HttpService(url=url, timeout=2)\ndata = asyncio.run(client.make_http_request)\nif data:\n    json_data = json.loads(data)\n    print(json_data[\"hourly\"])",
+        "peekOfCode": "client = HttpService(url=url, timeout=2)\ndata = asyncio.run(client.get_request())\nif data:\n    json_data = json.loads(data)\n    print(json_data[\"hourly\"])",
         "detail": "main",
         "documentation": {}
     },
@@ -234,7 +235,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "data = asyncio.run(client.make_http_request)\nif data:\n    json_data = json.loads(data)\n    print(json_data[\"hourly\"])",
+        "peekOfCode": "data = asyncio.run(client.get_request())\nif data:\n    json_data = json.loads(data)\n    print(json_data[\"hourly\"])",
         "detail": "main",
         "documentation": {}
     }
