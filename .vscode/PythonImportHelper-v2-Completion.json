@@ -44,12 +44,29 @@
         "documentation": {}
     },
     {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
         "label": "subprocess",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "subprocess",
         "description": "subprocess",
         "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "NetworkService",
+        "importPath": "network_service.network_service",
+        "description": "network_service.network_service",
+        "isExtraImport": true,
+        "detail": "network_service.network_service",
         "documentation": {}
     },
     {
@@ -131,6 +148,24 @@
         "description": ".venv.bin.activate_this",
         "peekOfCode": "sys.prefix = base",
         "detail": ".venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "NetworkService",
+        "kind": 6,
+        "importPath": "network_service.network_service",
+        "description": "network_service.network_service",
+        "peekOfCode": "class NetworkService:\n    \"\"\"NetworkService accepts a file(.txt) with ip addresses and check availability of each IP Address\"\"\"\n    def __init__(self, file: str):\n        \"\"\"Pass path contianing list of ip address\"\"\"\n        self.file = file\n    def get_devices(self):\n        \"\"\"Generates a list of ip addresses from the loaded .txt file\"\"\"\n        try:\n            with open(self.file) as file:\n                ip_addresses = file.read().splitlines()",
+        "detail": "network_service.network_service",
+        "documentation": {}
+    },
+    {
+        "label": "nc",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "nc = NetworkService(\"./network_service/devices.txt\")\nnc.check_device_availability",
+        "detail": "main",
         "documentation": {}
     }
 ]
