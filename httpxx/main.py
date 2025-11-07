@@ -87,7 +87,7 @@ if __name__ == "__main__":
             data = {
                 "model": "gpt-4o-mini",
                 "messages": [
-                    {"role": "system", "content": "You are a heplful assistant."},
+                    {"role": "developer", "content": "You are a heplful assistant."},
                     {"role": "user", "content": question},
                 ],
                 "temperature": 0.7,
