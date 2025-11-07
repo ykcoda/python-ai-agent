@@ -53,14 +53,6 @@
         "documentation": {}
     },
     {
-        "label": "pprint",
-        "importPath": "pprint",
-        "description": "pprint",
-        "isExtraImport": true,
-        "detail": "pprint",
-        "documentation": {}
-    },
-    {
         "label": "asyncio",
         "kind": 6,
         "isExtraImport": true,
@@ -79,12 +71,37 @@
         "documentation": {}
     },
     {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
         "label": "subprocess",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "subprocess",
         "description": "subprocess",
         "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "HttpService",
+        "importPath": "httpxx.main",
+        "description": "httpxx.main",
+        "isExtraImport": true,
+        "detail": "httpxx.main",
         "documentation": {}
     },
     {
@@ -169,12 +186,21 @@
         "documentation": {}
     },
     {
-        "label": "data",
+        "label": "HttpService",
+        "kind": 6,
+        "importPath": "httpxx.main",
+        "description": "httpxx.main",
+        "peekOfCode": "class HttpService:\n    \"\"\"HttpService will accept a URL and make an API call.\"\"\"\n    def __init__(\n        self,\n        url: str,\n        headers: dict | None = None,\n        data: dict | None = None,\n        timeout: int = 5,\n    ):\n        \"\"\"Accepts url and timeout\"\"\"",
+        "detail": "httpxx.main",
+        "documentation": {}
+    },
+    {
+        "label": "api_key",
         "kind": 5,
-        "importPath": "httpx.main",
-        "description": "httpx.main",
-        "peekOfCode": "data = asyncio.run(get_weather_info())\npprint(data[\"hourly\"][\"temperature_2m\"])",
-        "detail": "httpx.main",
+        "importPath": "httpxx.main",
+        "description": "httpxx.main",
+        "peekOfCode": "api_key = os.getenv(\"API_KEY\")\n######################################################################################################\nlogging.basicConfig(\n    filename=\"logs.txt\",\n    level=logging.INFO,\n    format=\"%(asctime)s - %(levelname)s - %(message)s\",\n)\n######################################################################################################\nclass HttpService:\n    \"\"\"HttpService will accept a URL and make an API call.\"\"\"",
+        "detail": "httpxx.main",
         "documentation": {}
     },
     {
@@ -184,6 +210,33 @@
         "description": "network_service.network_service",
         "peekOfCode": "class NetworkService:\n    \"\"\"NetworkService accepts a file(.txt) with ip addresses and check availability of each IP Address\"\"\"\n    def __init__(self, file: str):\n        \"\"\"Pass path contianing list of ip address\"\"\"\n        self.file = file\n    def get_devices(self):\n        \"\"\"Generates a list of ip addresses from the loaded .txt file\"\"\"\n        try:\n            with open(self.file) as file:\n                ip_addresses = file.read().splitlines()",
         "detail": "network_service.network_service",
+        "documentation": {}
+    },
+    {
+        "label": "url",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "url = \"https://api.open-meteo.com/v1/forecast?latitude=35&longitude=139&hourly=temperature_2m\"\nclient = HttpService(url=url, timeout=2)\ndata = asyncio.run(client.get_request())\nif data:\n    json_data = json.loads(data)\n    print(json_data[\"hourly\"])",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "client = HttpService(url=url, timeout=2)\ndata = asyncio.run(client.get_request())\nif data:\n    json_data = json.loads(data)\n    print(json_data[\"hourly\"])",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "data = asyncio.run(client.get_request())\nif data:\n    json_data = json.loads(data)\n    print(json_data[\"hourly\"])",
+        "detail": "main",
         "documentation": {}
     }
 ]
