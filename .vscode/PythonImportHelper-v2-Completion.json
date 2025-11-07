@@ -44,15 +44,6 @@
         "documentation": {}
     },
     {
-        "label": "subprocess",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "subprocess",
-        "description": "subprocess",
-        "detail": "subprocess",
-        "documentation": {}
-    },
-    {
         "label": "bin_dir",
         "kind": 5,
         "importPath": ".venv.bin.activate_this",
@@ -131,6 +122,24 @@
         "description": ".venv.bin.activate_this",
         "peekOfCode": "sys.prefix = base",
         "detail": ".venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "Robot",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class Robot:\n    \"\"\"This class implements a Robot\"\"\"\n    def __init__(self, name: str, year: int):\n        self.name = name\n        self.year = year\nr1 = Robot(\"Robot1\", 2025)\nprint(f\"Robot name: {r1.name}\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "r1",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "r1 = Robot(\"Robot1\", 2025)\nprint(f\"Robot name: {r1.name}\")",
+        "detail": "main",
         "documentation": {}
     }
 ]

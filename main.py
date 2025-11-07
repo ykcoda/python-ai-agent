@@ -1,15 +1,13 @@
-import subprocess
+# OOP DEFINING CLASSES AND OBJECTS
 
 
-with open("hosts.txt") as file:
-    ips = file.read().splitlines()
+class Robot:
+    """This class implements a Robot"""
 
-    for ip in ips:
-        try:
-            command = f"ping -c 5 {ip}"
-            output = subprocess.check_output(command.split())
-            print(output.decode())
-        except subprocess.CalledProcessError as e:
-            print(f"{e}")
+    def __init__(self, name: str, year: int):
+        self.name = name
+        self.year = year
 
-        print("#" * 50)
+
+r1 = Robot("Robot1", 2025)
+print(f"Robot name: {r1.name}")
