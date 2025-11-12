@@ -37,9 +37,10 @@ def get_ai_tutor_response(user_qustion):
         print(f"An error occured: {e}")
         return f"Sorry, I encounted an error trying to get an answer: {e}"
 
-ask_question = input("As you AI tutor a question: ")
-print("")
-print("AI is thinking......")
-print("")
-question = get_ai_tutor_response(ask_question)
-print(question)
+
+if __name__ == "__main__":
+    ask_question = input("As you AI tutor a question: ")
+    print("AI is thinking......")
+    print("")
+    question = get_ai_tutor_response(ask_question)
+    print(question)
