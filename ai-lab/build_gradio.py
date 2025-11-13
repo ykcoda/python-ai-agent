@@ -1,9 +1,9 @@
-from build_adaptive_ai_tutor import get_ai_tutor_response
+from build_adaptive_ai_tutor import get_ai_tutor_stream
 import gradio as gr
 
 
 ai_tutor_interface = gr.Interface(
-    fn=get_ai_tutor_response,
+    fn=get_ai_tutor_stream,
     inputs=gr.Textbox(
         lines=5, placeholder="Ask the AI Tutor Anything...", label="Your Question"
     ),
@@ -14,4 +14,4 @@ ai_tutor_interface = gr.Interface(
 )
 
 print("Launching Gradio Interface...")
-ai_tutor_interface.launch()
+ai_tutor_interface.queue().launch()

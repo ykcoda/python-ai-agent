@@ -1,5 +1,8 @@
 from asyncio import streams
+from dis import Instruction
+from cgitb import text
 import sched
+import sre_parse
 from openai import OpenAI
 from dotenv import load_dotenv
 import os
@@ -44,19 +47,28 @@ def get_ai_tutor_response(user_question):
 def get_ai_tutor_stream(user_question):
     system_prompt = "You are a helpful and patient AI Tutor. Explain concepts clearly and concisely."
 
+    try:
+        stream = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_question},
+                ],
+                temperature=0.7,
+                stream=True
+        )
 
-    stream = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_question},
-            ],
-            temperature=0.7,
-            stream=True
-    )
+        full_response = ""
 
-
-    return stream
+        for chunk in stream:
+            if chunk.choices[0].delta and chunk.choices[0].delta.content:
+                text_chunk = chunk.choices[0].delta.content
+                full_response += text_chunk
+                yield full_response
+    
+    except Exception as e:
+        print(f"An error occured during streaming: {e}") 
+        yield f"Sorry, I encounted an error: {e}"
 
 
 
@@ -67,6 +79,6 @@ if __name__ == "__main__":
     print("AI is thinking......")
     print("")
     stream = get_ai_tutor_stream(ask_question)
+    print(stream, end="",flush=True)
     
-    for chuck in stream: 
-        print(chuck.choices[0].delta.content, end="", flush=True)
+
