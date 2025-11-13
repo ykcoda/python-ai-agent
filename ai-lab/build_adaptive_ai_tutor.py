@@ -1,3 +1,5 @@
+from asyncio import streams
+import sched
 from openai import OpenAI
 from dotenv import load_dotenv
 import os
@@ -10,7 +12,7 @@ print(openai_api_key[:8])
 client = OpenAI(api_key=openai_api_key)
 
 
-def get_ai_tutor_response(user_qustion):
+def get_ai_tutor_response(user_question):
     """
     send a question to the OpenAI API, asking it to respond as an AI Tutor.
 
@@ -27,7 +29,7 @@ def get_ai_tutor_response(user_qustion):
             model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_qustion},
+                {"role": "user", "content": user_question},
             ],
             temperature=0.7,
         )
@@ -38,9 +40,33 @@ def get_ai_tutor_response(user_qustion):
         return f"Sorry, I encounted an error trying to get an answer: {e}"
 
 
+
+def get_ai_tutor_stream(user_question):
+    system_prompt = "You are a helpful and patient AI Tutor. Explain concepts clearly and concisely."
+
+
+    stream = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_question},
+            ],
+            temperature=0.7,
+            stream=True
+    )
+
+
+    return stream
+
+
+
+
+
 if __name__ == "__main__":
     ask_question = input("As you AI tutor a question: ")
     print("AI is thinking......")
     print("")
-    question = get_ai_tutor_response(ask_question)
-    print(question)
+    stream = get_ai_tutor_stream(ask_question)
+    
+    for chuck in stream: 
+        print(chuck.choices[0].delta.content, end="", flush=True)

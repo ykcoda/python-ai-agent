@@ -119,3 +119,9 @@ openai_description = query_openai_vision_model(
 )
 
 print(openai_description.choices[0].message.content)
+
+
+
+for model in client.models.list():
+
+    print(model.id)
