@@ -49,6 +49,7 @@ explanation_level = {
     3: "like a high school student",
     4: "like a colledge student",
     5: "like an expert in the field",
+    6: "like a Ph.D level",
 }
 
 

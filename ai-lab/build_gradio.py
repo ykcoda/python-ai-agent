@@ -9,7 +9,7 @@ ai_tutor_interface = gr.Interface(
     ),
     gr.Slider(
         minimum=1,
-        maximum=5,
+        maximum=6,
         step=1, # Only allow whole numbers
         value=3, # Default value 
         label="Explanation Level"
